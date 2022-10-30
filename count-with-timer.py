@@ -22,6 +22,7 @@ while True:
 
     votacao = new_df[['n','nm','pvap','vap']]
     votacao['pvap'] = votacao['pvap'].str.replace(',','.')
+
     votacao.columns = ['numero', 'nome_candidato', '%_votos', 'qtde_votos']
     print(votacao)
     print("")
@@ -33,11 +34,12 @@ while True:
     print('abstencoes: ', abstencoes)
     print('% eleitorado_apurado: ', round(eleitorado_apurado, 2))
     print('diferenca %: ', float(votacao['%_votos'][0]) - float(votacao['%_votos'][1]))
+    print('diferenca de votos: ', int(votacao['qtde_votos'][0]) - int(votacao['qtde_votos'][1]))
+
     print("")
     print("")
     print("")
 
-    # 10 seconds update
-    time.sleep(10)
+    time.sleep(5)
 
 
